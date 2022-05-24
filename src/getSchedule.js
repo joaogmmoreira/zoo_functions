@@ -45,12 +45,8 @@ function getSchedule(scheduleTarget) {
     return species.find((element) => element.name === scheduleTarget).availability;
   }
   if (daysOfTheWeek.includes(scheduleTarget)) {
-    const result = daysObj.find((element) => element.includes(scheduleTarget));
-    // .reduce((acc, curr) => {
-    //   acc[curr] = daysObj[curr];
-    //   return acc;
-    // }, {});
-    return result;
+    const result = daysObj[scheduleTarget];
+    return { [scheduleTarget]: result };
   }
   return daysObj;
 }
