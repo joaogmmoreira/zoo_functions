@@ -59,6 +59,6 @@ function getEmployeesCoverage(obj) {
   }
   return employeeObj(obj);
 }
-console.log(getEmployeesCoverage());
+// console.log(getEmployeesCoverage());
 
 module.exports = getEmployeesCoverage;
