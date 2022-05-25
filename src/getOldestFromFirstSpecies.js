@@ -23,8 +23,22 @@ function getOldestFromFirstSpecies(id) {
   return oldestAnimalArr[0];
 }
 
+// DICAS DE SUMOYAMA!!!
+// species.reduce((acc, curr) => {
+//   console.log(acc);
+//   acc.push(curr.name);
+//   return acc;
+// }, []);
+
+// const lala = species.reduce((acc, curr) => {
+//   acc[curr.name] = curr.residents.map((element) => element.name);
+//   return acc;
+// }, {});
+
+// console.log(lala);
+
 // https://stackoverflow.com/questions/34309090/convert-array-of-objects-into-array-of-properties
 
-console.log(getOldestFromFirstSpecies('c5b83cb3-a451-49e2-ac45-ff3f54fbe7e1'));
+// console.log(getOldestFromFirstSpecies('c5b83cb3-a451-49e2-ac45-ff3f54fbe7e1'));
 
 module.exports = getOldestFromFirstSpecies;
