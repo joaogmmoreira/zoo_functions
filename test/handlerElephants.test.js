@@ -25,4 +25,7 @@ describe('Testes da função HandlerElephants', () => {
   it('Para o argumento popularity deve retornar um número igual ou maior a 5', () => {
     expect(handlerElephants('popularity')).toBe(5);
   });
+  it('Para o argumento vazio deve retornar null', () => {
+    expect(handlerElephants('qualquercoisa')).toBe(null);
+  });
 });
