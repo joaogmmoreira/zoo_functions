@@ -23,6 +23,12 @@ describe('Testes da função getOpeningHours', () => {
   it('passando os argumentos Saturday e 12:c0-PM retorna um erro', () => {
     expect(() => { getOpeningHours('Saturday', '12:c0-PM'); }).toThrow('The minutes should represent a number');
   });
+  it('passando os argumentos Saturday e 13:00-PM retorna um erro', () => {
+    expect(() => { getOpeningHours('Saturday', '13:00-PM'); }).toThrow('The hour must be between 0 and 12');
+  });
+  it('passando os argumentos Saturday e 12:72-PM retorna um erro', () => {
+    expect(() => { getOpeningHours('Saturday', '12:72-PM'); }).toThrow('The minutes must be between 0 and 59');
+  });
 });
 
 // https://stackoverflow.com/questions/49027595/jest-test-that-exception-will-be-thrown-isnt-working
