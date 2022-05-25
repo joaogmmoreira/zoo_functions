@@ -1,4 +1,3 @@
-const { internet } = require('faker/lib/locales/pt_BR');
 const getOpeningHours = require('../src/getOpeningHours');
 
 describe('Testes da função getOpeningHours', () => {
@@ -29,6 +28,9 @@ describe('Testes da função getOpeningHours', () => {
   it('passando os argumentos Saturday e 12:72-PM retorna um erro', () => {
     expect(() => { getOpeningHours('Saturday', '12:72-PM'); }).toThrow('The minutes must be between 0 and 59');
   });
+  it('passando os argumentos Monday e 09:00-AM deve conter closed', () => {
+    expect(getOpeningHours('Monday', '09:00-AM')).toContain('closed');
+  });
 });
-
+// https://jestjs.io/docs/using-matchers#exceptions
 // https://stackoverflow.com/questions/49027595/jest-test-that-exception-will-be-thrown-isnt-working
