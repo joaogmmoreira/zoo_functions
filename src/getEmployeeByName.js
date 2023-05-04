@@ -6,11 +6,12 @@ function getEmployeeByName(employeeName) {
     return {};
   }
 
-  return employees.find((element) =>
-    element.firstName === employeeName || element.lastName === employeeName);
-  // return employees.filter((element) => element.firstName === employeeName || element.lastName === employeeName);
+  const employeeByName = employees.find((element) =>
+  element.firstName === employeeName || element.lastName === employeeName);
+
+  return employeeByName;
 }
 
-console.log(getEmployeeByName('Nigel'));
+// console.log(getEmployeeByName('Nigel'));
 
 module.exports = getEmployeeByName;

@@ -1,28 +1,20 @@
 {
   "env": {
+    "browser": true,
     "es2020": true
   },
-  "extends": "trybe-fundamentals",
-  "rules": {
-    "max-lines": "off",
-    "max-params": "off",
-    "linebreak-style": "off",
-    "no-unused-vars": [
-      "error",
-      {
-        "args": "none",
-        "vars": "local",
-        "varsIgnorePattern": "data|getOpeningHours|handlerElephants"
-      }
-    ]
+  "extends": "trybe-frontend",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
   },
-  "overrides": [
-    {
-      "files": ["test/*.js"],
-      "rules": {
-        "max-lines-per-function": ["off"],
-        "max-len": ["off"]
-      }
-    }
-  ]
+  "plugins": ["react", "sonarjs"],
+  "rules": {
+    "react/state-in-constructor": "off",
+    "react/no-did-mount-set-state": "off",
+    "react/no-did-update-set-state": "warn"
+  }
 }
