@@ -8,6 +8,8 @@ function countAnimals(animal) {
       return acc;
     }, []);
 
+    // console.log(animalsObj)
+
     const sorted = Object.keys(animalsObj).sort().reduce((acc, curr) => {
       acc[curr] = animalsObj[curr];
       return acc;
@@ -22,10 +24,10 @@ function countAnimals(animal) {
   if (animal.sex) {
     return maleOrFemale.length;
   }
-  
+
   return species.find((element) => element.name === animal.specie).residents.length;
 }
-// console.log(countAnimals({ specie: 'penguins' }));
+console.log(countAnimals({ specie: 'penguins' }));
 // https://raullesteves.medium.com/javascript-entendendo-o-reduce-de-uma-vez-por-todas-c4cbaa16e380
 
 module.exports = countAnimals;
